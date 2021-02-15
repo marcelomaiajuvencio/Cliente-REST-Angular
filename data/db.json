@@ -1,16 +1,26 @@
 {
-  "cidades": [
-    {
-      "nome": "Uberlândia",
-      "id": 1
-    },
-    {
-      "nome": "São Paulo",
-      "id": 2
-    },
-    {
-      "nome": "Belo Horizonte",
-      "id": 3
-    }
-  ]
+ "users": [
+  {
+    "username": "mmjuvencio27",
+    "name": "Marcelo Maia Juvencio27",
+    "email": "mj_maia@yahoo.com.br27",
+    "password": "123427",
+    "permissionLevel": "VIEW"
+  },
+  {
+    "username": "mmjuvencio28",
+    "name": "Marcelo Maia Juvencio28",
+    "email": "mj_maia@yahoo.com.br28",
+    "password": "123428",
+    "permissionLevel": "NONE"
+  },
+  {
+    "username": "mmjuvencio29",
+    "name": "Marcelo Maia Juvencio29",
+    "email": "mj_maia@yahoo.com.br29",
+    "password": "123429",
+    "permissionLevel": "VIEW"
+  }
+]
+
 }
