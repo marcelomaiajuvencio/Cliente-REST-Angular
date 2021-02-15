@@ -6,11 +6,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { RegisteredUsersComponent } from './registered-users/registered-users.component';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisteredUsersComponent
+    RegisteredUsersComponent,
+    UserRegistrationComponent
   ],
   imports: [
     BrowserModule,
