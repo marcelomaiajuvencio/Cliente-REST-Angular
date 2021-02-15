@@ -7,10 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersService {
 
- // usersUrl = 'http://localhost:8080/users';
-  usersUrl = 'http://localhost:3000/cidades';
-
-  //constructor(private http: Http) { }
+  usersUrl = 'http://localhost:8080/users';
 
   constructor(private http: HttpClient) { }
 
