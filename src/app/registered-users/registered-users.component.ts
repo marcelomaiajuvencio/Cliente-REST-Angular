@@ -1,5 +1,6 @@
 import { UsersService } from './../users.service';
 import { Component, OnInit } from '@angular/core';
+import { User } from './user';
 
 
 @Component({
@@ -9,23 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisteredUsersComponent implements OnInit {
 
-  users = [];
+  users: User[] | undefined;
 
   constructor(private usersService: UsersService) { }
 
 
 
   ngOnInit() {
-    //this.pesquisar();
-    this.usersService.allList()
-      .then(users => this.users = users);
+    this.usersService.list().subscribe(dados => this.users = dados);
   }
-
-  pesquisar() {
-    this.usersService.allList()
-      .then(users => this.users = users);
-  }
-
-
 
 }

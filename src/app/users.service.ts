@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { User } from './registered-users/user';
 //import 'node_modules/rxjs/operator/toPromise';
 
 @Injectable({
@@ -11,12 +12,10 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  allList(): Promise<any> {
-
-   return this.http.get(this.usersUrl)
-      .toPromise()
-      .then(response => response)
+  list(){
+    return this.http.get<User[]>(this.usersUrl);
   }
+
 
 
 }

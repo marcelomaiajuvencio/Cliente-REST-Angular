@@ -9,28 +9,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let user of users">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{{user.username}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.permissionLevel}}</td>
     </tr>
-    <!--<tr>
-      <td>mmmm</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>mmmm</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>mmmm</td>
-      <td>mmmm</td>
-      <td>@twitter</td>
-      <td>mmmm</td>
-    </tr>-->
-  </tbody>
+   </tbody>
 </table>
