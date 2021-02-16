@@ -10,11 +10,6 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
-const routes: Routes = [
-  { path: 'usuarios', component: RegisteredUsersComponent },
-  { path: 'usuarios/novo', component: UserRegistrationComponent }
-];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +19,6 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
     AppRoutingModule
 
   ],
