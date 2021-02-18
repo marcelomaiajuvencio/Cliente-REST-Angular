@@ -1,5 +1,17 @@
+/* import { User } from './../registered-users/user'; */
 import { UsersService } from './../users.service';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { FormsModule }   from '@angular/forms';
+
+class User {
+  username: string | undefined ;
+  name: string | undefined;
+  email: string | undefined;
+  password: string | undefined;
+  permissionLevel: string = '';
+}
+
 
 @Component({
   selector: 'app-user-registration',
@@ -8,24 +20,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserRegistrationComponent implements OnInit {
 
+  user = new User();
+
   constructor(private userService: UsersService) { }
 
   ngOnInit(): void {
   }
 
-  adicionar(login: string, senha: string, nome: string, email: string, permmissao: string) {
-    //alert(`${login}-${senha}-${nome}-${email}-${permmissao}`);
-    this.userService.create({
-      username: login,
-      name: nome,
-      email: email,
-      password: senha,
-      permissionLevel: permmissao
-     }).subscribe(sucesso=>alert('Usuário cadastrado com sucesso!!'),
+  add(form: NgForm) {
+    this.userService
+    .create(this.user).subscribe(sucesso=>alert('Usuário cadastrado com sucesso!!'),
       erro=>console.error(erro),
-      ()=>console.log('OK')
+      ()=>console.log('OK'));
 
-     );
+     form.reset({permissionLevel: ''});
+
   }
 
 }

@@ -1,38 +1,38 @@
 <div id="centralizar" class="container">
-<form>
+<form #userForm="ngForm"
+(ngSubmit)="add(userForm)">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Login</label>
-      <input type="email" class="form-control" #login placeholder="Login">
+      <input type="text" class="form-control" [(ngModel)]="user.username" placeholder="Login" #username="ngModel" name="username">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Senha</label>
-      <input type="password" class="form-control" #senha placeholder="Senha">
+      <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="Senha" #password="ngModel" name="password">
     </div>
   </div>
   <div class="form-group">
     <label for="inputAddress">Nome</label>
-    <input type="text" class="form-control" #nome placeholder="Nome">
+    <input type="text" class="form-control" [(ngModel)]="user.name" placeholder="Nome" #name="ngModel" name="name">
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">Email</label>
-      <input type="text" class="form-control" #email placeholder="Email">
+      <input type="email" class="form-control" [(ngModel)]="user.email" placeholder="Email" #email="ngModel" name="email">
     </div>
     <div class="form-group col-md-4">
       <label for="inputEstado">Nível de Permissão</label>
-      <select #permissao class="form-control">
-        <option selected>Escolher...</option>
-        <option>Nenhum</option>
-        <option>Visualização</option>
-        <option>Administrador</option>
+      <select [(ngModel)]="user.permissionLevel" class="form-control" #permissionLevel="ngModel" name="permissionLevel">
+        <option value="" selected>Escolher...</option>
+        <option value="none">Nenhum</option>
+        <option value="view">Visualização</option>
+        <option value="adm">Administrador</option>
       </select>
     </div>
 
   </div>
 
-  <button type="button" class="btn btn-primary"
-    (click)="adicionar(login.value, senha.value, nome.value, email.value, permissao.value); ">Salvar</button>
+  <button type="submit" class="btn btn-primary">Salvar</button>
 </form>
 
 </div>
