@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './registered-users/user';
@@ -9,9 +10,11 @@ import { pipe } from 'rxjs';
 })
 export class UsersService {
 
-  usersUrl = 'http://localhost:8080/users';
+  usersUrl: string = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.usersUrl = `${environment.apiUrl}/users`;
+   }
 
   list(){
     return this.http.get<User[]>(this.usersUrl);
