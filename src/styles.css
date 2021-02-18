@@ -19,3 +19,6 @@ button[name="bnt_cria"]{
 button[name="bnt_lista"]{
   margin: 0 5px;
 }
+div.feedback {
+  color: red;
+}
